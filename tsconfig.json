@@ -1,0 +1,33 @@
+import type { ReactNode } from 'react'
+
+export default function AuthLayout({ children }: { children: ReactNode }) {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50
+                    flex flex-col items-center justify-center px-4 py-12">
+      {/* 로고 영역 */}
+      <div className="mb-8 text-center">
+        <div className="inline-flex items-center gap-2 mb-2">
+          <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center">
+            <span className="text-white font-bold text-lg">충</span>
+          </div>
+          <span className="text-xl font-bold text-gray-900">충북대 매칭</span>
+        </div>
+        <p className="text-sm text-gray-500">
+          공모전 팀원 & 스포츠 파트너를 한 곳에서
+        </p>
+      </div>
+
+      {/* 카드 컨테이너 */}
+      <div className="w-full max-w-md">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+          {children}
+        </div>
+      </div>
+
+      {/* 푸터 */}
+      <p className="mt-8 text-xs text-gray-400 text-center">
+        충북대학교 재학생 전용 서비스 · @chungbuk.ac.kr 이메일 필요
+      </p>
+    </div>
+  )
+}
